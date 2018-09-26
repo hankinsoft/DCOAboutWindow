@@ -196,20 +196,6 @@
     
     // Add to placeholder
     [self.placeHolderView addSubview:theView];
-
-    // Enable layer backing and change the background color
-    theView.wantsLayer = YES;
-    
-    NSColor * backgroundColor = [NSColor windowBackgroundColor];
-    theView.layer.backgroundColor = backgroundColor.CGColor;
-    
-    // Add bottom border
-    CALayer *bottomBorder = [CALayer layer];
-    bottomBorder.borderColor = [NSColor grayColor].CGColor;
-    bottomBorder.borderWidth = 1;
-    bottomBorder.frame = CGRectMake(-1.f, .0f, CGRectGetWidth(theView.frame) + 2.f, CGRectGetHeight(theView.frame) + 1.f);
-    bottomBorder.autoresizingMask = NSViewHeightSizable | NSViewWidthSizable;
-    [theView.layer addSublayer:bottomBorder];
     
     // Set active view
     self.activeView = theView;
